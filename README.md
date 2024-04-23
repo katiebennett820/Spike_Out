@@ -7,11 +7,8 @@ Overall steps:
 
 1. Model center of diffraction spike as a line going across frame.
 2. Along each row, spike also has a horizontal shape. Determine the width of the diffraction spike in the spectral direction (7 pixels for UVIS).
-3. Take the median of the entire diffraction spike shape along a given interval length in the spatial direction (I have the medial per 5 pixels here). 
+3. Take the median of the entire diffraction spike shape along a given interval length in the spatial direction (I have the medial per 40 pixels here). 
 4. In each interval, empirically model the diffraction spike as the median diffraction spike. 
-5. Subtract the median diffraction spike from each exposure. 
-6. If the subtracted values in the corrected image decrease too much (they will plunge to zero if the median and given value are close), 
-   adjust by offsetting resulting flux to average flux from rest of row:
-7. Do this by modeling a line running through the flux along each row, excluding the region affected by the spike, and 
-   offsetting the corrected values to this line. 
-8. Repeat as needed with as many erroneous diffraction spikes as you have! 
+5. Subtract the background flux from the median diffraction spike. 
+6. Subtract the median diffraction spike from each exposure. 
+7. Repeat as needed with as many erroneous diffraction spikes as you have! 
